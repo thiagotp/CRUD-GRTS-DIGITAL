@@ -1,8 +1,12 @@
-# Calculadora JavaScript
+# PROJETO CRUD GRTS DIGITAL
 
-[![Hcode Treinamentos](https://www.hcode.com.br/res/img/hcode-200x100.png)](https://www.hcode.com.br)
+AQUI TEM O PROJETO DE UM CRUD
 
-Calculadora desenvolvida como exemplo do Curso Completo de JavaScript na Udemy.com.
+PARA REALIZAR UTILIZAR O SERVIDOR VOCE TERA QUE IMPORTAR O BANCO DE DADOS QUE ESTÁ DENTRO DA PASTA BANCO
 
-### Projeto
-![Calculadora](https://firebasestorage.googleapis.com/v0/b/hcode-com-br.appspot.com/o/calculadora-hcode.jpg?alt=media&token=5406aa3f-b965-401c-9b4e-654609c78b33)
+ESSE SISTEMA JÁ TEM UM ADM CADASTRADO E NÃO PERMITE O CADASTRO DE OUTRO A MENOS QUE SEJA FEITA DIRETO PELO BANCO
+
+SEGUE ABAIXO O ADM CADASTRADO NO SISTEMA PARA EFETUAR O LOGIN:
+
+USUARIO: victor
+SENHA: crud

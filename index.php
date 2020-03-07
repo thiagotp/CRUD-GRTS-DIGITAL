@@ -8,13 +8,11 @@ if($_POST != NULL){
     if($connect->connect_error){
         echo "Erro de Conexão!<br>".$connect->$connect_error;
     }
-    var_dump($_POST);
+
     $login = $_POST["login"];
     $password = md5($_POST["password"]);
     
     if ($login != "" && $password != "" ) {
-        var_dump($login);
-        var_dump($password);
         // Cria o comando SQL
           $sql = "SELECT * FROM adm WHERE usuario = '$login' AND senha = '$password'";
           // Executa no BD
@@ -24,12 +22,12 @@ if($_POST != NULL){
               $username = $registro["usuario"];
               $id_user = $registro["id"];
           }
-          var_dump($username);
-          var_dump($_SESSION);
+          if($username != NULL && $id_user != NULL && $username != "" && $id_user != ""){
           $_SESSION["logado"]=true;
           $_SESSION["name"]=$username;
           $_SESSION["id_user"]=$id_user;
-          header("Location:info_end.php");
+          header("Location:home.php");
+          }
     }
 }
 

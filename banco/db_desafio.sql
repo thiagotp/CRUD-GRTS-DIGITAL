@@ -52,10 +52,10 @@ INSERT INTO `adm` (`id`, `usuario`, `senha`) VALUES
 CREATE TABLE `clientes` (
   `id` int(11) NOT NULL,
   `nome_empresa` varchar(255) NOT NULL,
-  `email` varchar(45) NOT NULL,
-  `telefone` varchar(150) NOT NULL,
-  `nome_responsavel` varchar(250) NOT NULL,
-  `id_principal` int(11) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `telefone` varchar(20) NOT NULL,
+  `nome_responsavel` varchar(255) NOT NULL,
+  `id_principal` int NOT NULL,
   `cnpj` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -74,15 +74,15 @@ INSERT INTO `clientes` (`id`, `nome_empresa`, `email`, `telefone`, `nome_respons
 --
 
 CREATE TABLE `endereco` (
-  `id` int(11) NOT NULL,
-  `cliente_id` int(11) NOT NULL,
-  `logradouro` varchar(250) NOT NULL,
-  `complemento` varchar(100) DEFAULT NULL,
-  `numero` int(11) NOT NULL,
-  `bairro` varchar(45) NOT NULL,
-  `cidade` varchar(45) NOT NULL,
+  `id` int NOT NULL,
+  `cliente_id` int NOT NULL,
+  `logradouro` varchar(255) NOT NULL,
+  `complemento` varchar(255) DEFAULT NULL,
+  `numero` int NOT NULL,
+  `bairro` varchar(100) NOT NULL,
+  `cidade` varchar(50) NOT NULL,
   `estado` varchar(42) NOT NULL,
-  `cep` varchar(42) NOT NULL
+  `cep` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --

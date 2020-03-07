@@ -94,6 +94,7 @@ if($_POST != NULL){
                 height: 200px;
                 border-radius: 10px;
                 border-color: white;
+
             }
             img{
                 display: block;
@@ -139,7 +140,7 @@ if($_POST != NULL){
     <fieldset>
     <form action="index.php" method="POST">
         <div>
-            <input class="input-fields" type="login" name="login" placeholder="Login" required>
+            <input class="input-fields" type="login" name="login" onkeypress='return filtroTeclasLetras(event)' placeholder="Login" required>
             <input class="input-fields" type="password" name="password" placeholder="Password" required>
         </div>
         <div>
@@ -148,5 +149,10 @@ if($_POST != NULL){
     </form>
     </fieldset>
     <?php require_once("footer.php") ?>
+    <script>
+        var filtroTeclasLetras = function(event) {
+  return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.keyCode == 13) || (event.keyCode == 32))
+}
+    </script>
 </body>
 </html>

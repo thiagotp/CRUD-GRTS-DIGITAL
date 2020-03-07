@@ -37,10 +37,12 @@ require_once('config.php');
                 bottom:0;
                 left:0;
                 background-color:#0288D1;
+                height: 10%;
                 
             }
             h5{
                 text-align: center;
+                margin: 0;
             }
             a{
                 color: black;

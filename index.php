@@ -62,7 +62,8 @@ if($_POST != NULL){
                 position: fixed;
                 bottom:0;
                 left:0;
-                background-color:#0288D1;   
+                background-color:#0288D1; 
+                height: 10%;  
             }
             nav {
                 width:100%;
@@ -82,6 +83,7 @@ if($_POST != NULL){
             
             h5{
                 text-align: center;
+                margin: 0;
             }
             a{
                 color: black;

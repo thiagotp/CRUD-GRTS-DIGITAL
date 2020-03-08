@@ -84,7 +84,7 @@ while($row = mysqli_fetch_array($result))
                 background-color: #1A237E;
             }
         </style>
-  <title>GRTS</title>
+  <title>PROJETO GRTS DIGITAL</title>
 </head>
 
 <body onload="goFocus('nome')">

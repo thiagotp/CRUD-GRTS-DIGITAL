@@ -95,7 +95,7 @@
                 background-color: #1A237E;
             }
         </style>
-  <title>GRTS</title>
+  <title>PROJETO GRTS DIGITAL</title>
 </head>
 
 <body onload="goFocus('nome')">
@@ -210,7 +210,6 @@ document.getElementById(elementID).focus();
     $('.salario').mask('###0,00', {reverse: true});
 </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <!-- Latest compiled and minified JavaScript -->
     <script src="assets/js/bootstrap.min.js"></script>
     <script>
     $(document).ready(function () { 
@@ -304,7 +303,6 @@ document.getElementById(elementID).focus();
     });
 </script>
 
-<?php require_once("footer.php") ?>
 </body>
 
 </html>

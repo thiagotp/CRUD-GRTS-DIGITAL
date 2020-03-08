@@ -1,22 +1,28 @@
 <?php
 
 session_start();
-require_once('config.php');
+    require_once('config.php');
 
-  if($_SESSION["logado"]!=true){
-      header("Location: index.php");
-   }
+    if($_SESSION["logado"]!=true){
+        header("Location: index.php");
+    }
 
+ $id = $_GET['id'];
 ?>
 <html>
 <head>
 	<title>PROJETO GRTS DIGITAL</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
-        <style>
-            body
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+
+
+<style>
+                  
+                 
+                  body
             {
                 margin:0;
                 padding:0;
@@ -38,7 +44,6 @@ require_once('config.php');
                 left:0;
                 background-color:#0288D1;
                 height: 10%;
-                
             }
             h5{
                 text-align: center;
@@ -63,40 +68,42 @@ require_once('config.php');
                 padding: 2px;
                 background-color: #1A237E;
             }
+            .div-tb{
+                margin: 20px;
+            }
+        
         </style>
+
 </head>
 
 <body>
 <?php require_once("nav.php") ?>
 <div class="container box">
+<div align="right">
+<a href="home.php"><button type="button" class="btn btn-danger">Voltar</button></a>
+</div>
             <h1 align="center">PROJETO GRTS DIGITAL</h1>
             <br />
             <div class="table-responsive">
                 <br />
-                <div align="right">
-                
-                    <a href="create.php"><button type="button" class="btn btn-info btn-lg">Adicionar Cliente</button></a>
-                </div>
-                <br /><br />
-             <table id="example" class="display" style="width:100%">
-        <thead>
+    <div class="div-tb" align="center">
+    <label  for="">CLIENTE</label>
+    </div>
+    <table align="center" class="tb_cliente" border="2">                    
+    <thead>
             <tr>
                 <th>Nome da Empresa</th>
                 <th>Nome do Resposavel</th>
                 <th>CNPJ</th>                
                 <th>Email</th>
-                <th>Telefone</th>
-                <th>Endereço</th>
-                <th>Edit</th>
-                <th>Info</th>
-                <th>Delete</th>
-                
+                <th>Telefone</th>            
             </tr>
         </thead>
-        <tbody>
-        	<?php
+        
+    </div>
+    <?php
         	      
-                  $query ="SELECT * FROM clientes";
+                  $query ="SELECT * FROM clientes where id=$id";
                   $sql = mysqli_query($connect,$query);
                   while($row = mysqli_fetch_array($sql))
                   {
@@ -108,32 +115,67 @@ require_once('config.php');
                 <td><?php echo $row["cnpj"];?></td>
                 <td><?php echo $row["email"];?></td>
                 <td><?php echo $row["telefone"];?></td>
-                <td><a href="info_end.php?id=<?php echo $row['id']; ?>" class="btn btn-info">ENDEREÇO</a></td>
-                <td><a href="edit.php?id=<?php echo $row['id']; ?>" class="btn btn-info">EDIT</a></td>
-                <td><a href="info.php?id=<?php echo $row['id']; ?>" class="btn btn-info">Info</a></td>
-                <td><a href="delete.php?id=<?php echo $row['id'];?>" class="btn btn-danger" onClick="return confirm('Deseja deletar este registro?')">DELETE</a></td>
                  
             </tr>
             <?php } ?>
-            
-        </tbody>
-        
     </table>
+    
+    <div class="div-tb" align="center">
+    <label  for="">ENDEREÇOS</label>
+    </div>
+    <table id="examples" border="2">                    
+    <thead>
+            <tr>
+                <th>Logradouro</th>
+                <th>Bairro</th>
+                <th>Numero</th>
+                <th>Complemento</th>                
+                <th>Cidade</th>
+                <th>Estado</th>
+                <th>CEP</th>                
+            </tr>
+        </thead>
+        
+    </div>
+    <?php
+        $query = "SELECT * FROM clientes WHERE id=$id";
+        $sql = mysqli_query($connect,$query);
+        while($row = mysqli_fetch_array($sql)){
+            $principal = $row['id_principal'];
+        }
 
-		</div>
-	</div>
-
+        
+        $query = "SELECT * FROM endereco WHERE cliente_id = $id";
+        $sql2 = mysqli_query($connect,$query);
+        while($row = mysqli_fetch_array($sql2)){
+   
+    ?>
+    <tr>
+        <td><?php echo $row["logradouro"];?></td>
+        <td><?php echo $row["bairro"];?></td>
+        <td><?php echo $row["numero"];?></td>
+        <td><?php echo $row["complemento"];?></td>
+        <td><?php echo $row["cidade"];?></td>
+        <td><?php echo $row["estado"];?></td>
+        <td><?php echo $row["cep"];?></td>
+         
+    </tr>
+    <?php } 
+    ?>
+    </table>
     <?php require_once("footer.php") ?>
 
+
+    
 </body>
 </html>
 
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
-    $('#example').DataTable({
+    $('#examples').DataTable({
         "language": {
             "lengthMenu": "Mostrando _MENU_ registro por paginas",
             "zeroRecords": "Nada encontrado",
@@ -144,3 +186,7 @@ require_once('config.php');
     } );
 } );
 </script>
+
+
+
+

@@ -93,7 +93,7 @@ while($rowa = mysqli_fetch_array($resulta))
         
         
         </style>
-  <title>GRTS Digital</title>
+  <title>PROJETO GRTS DIGITAL</title>
 </head>
 <body onload="goFocus('nome')">
 <?php require_once("nav.php") ?>
@@ -300,8 +300,6 @@ document.getElementById(elementID).focus();
         $seuCampoCnpj.mask('00.000.000/0000-00', {reverse: true});
     });
 </script>
-
-<?php require_once("footer.php") ?>
 </body>
 
 </html>

@@ -11,7 +11,7 @@ session_start();
 ?>
 <html>
 <head>
-	<title>Clientes</title>
+	<title>PROJETO GRTS DIGITAL</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -76,7 +76,7 @@ session_start();
 <body>
 <?php require_once("nav.php") ?>
 <div class="container box">
-            <h1 align="center">CRUD GRTS</h1>
+            <h1 align="center">PROJETO GRTS DIGITAL</h1>
             <br />
             <div class="table-responsive">
                 <br />
@@ -163,12 +163,7 @@ session_start();
                 <td><?php echo $row["cep"];?></td>
                 <td><a href="edit_end.php?id=<?php echo $row['id']; ?>" class="btn btn-info">EDIT</a></td>
                 <td><a href="principal_end.php?id=<?php echo $row['id']; ?>&idCliente=<?php echo $id?>" class="btn btn-info">Tonar Principal</a></td>
-                <td><a href="delete_end.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">Delete</a></td>
-               <!-- <td><a href="delete.php?id=<?php echo $row['id'];?>" class="btn btn-danger"onClick="return confirm('Deseja deletar este registro?')">DELETfasdfE</a></td>
-                <td><a href="principal_end.php?id=<?php echo $row['id'];?>&idCliente=<?php echo $id?>"><button type="button" class="btn btn-info">Tornar Principal</button></a><td>
-               
-               -->
-                        
+                <td><a href="delete_end.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">Delete</a></td>     
             </tr>
    
             <?php } ?>
